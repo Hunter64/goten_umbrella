@@ -1,0 +1,204 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* For Main Menu*/
+.transition-menu { 
+    transition: 0.5s;
+    -moz-transition: 0.5s;
+}
+.transition-menu-label{
+    font-size: .0001px;
+    position: absolute;
+    margin-left: -3rem;
+    opacity: 0;
+    transition: 0.2s;
+    visibility: hidden;
+    -moz-transition: 0.2s;
+}
+.submenu{
+  display: none;
+}
+.transition-menu:hover .submenu{
+  display: none;
+}
+.transition-menu:hover {
+    @apply w-60;
+}
+.transition-menu:hover a svg{
+    @apply mr-1 ml-2;
+}
+.transition-menu:hover label{
+    @apply text-base relative opacity-100 ml-3 visible;
+}
+.notification {
+    -webkit-animation-name: notification_start;
+    animation-name: notification_start;
+    -webkit-animation-duration: 6s;
+    animation-duration: 6s;
+    -webkit-animation-iteration-count: inherit;
+    animation-iteration-count: inherit;
+  }
+
+.notification_m {
+    -webkit-animation-name: notification_start;
+    animation-name: notification_start;
+    -webkit-animation-duration: 15s;
+    animation-duration: 15s;
+    -webkit-animation-iteration-count: inherit;
+    animation-iteration-count: inherit;
+  }
+
+.notification_l {
+    -webkit-animation-name: notification_start;
+    animation-name: notification_start;
+    -webkit-animation-duration: 25s;
+    animation-duration: 25s;
+    -webkit-animation-iteration-count: inherit;
+    animation-iteration-count: inherit;
+  }
+
+.notification_xl {
+    -webkit-animation-name: notification_start;
+    animation-name: notification_start;
+    -webkit-animation-duration: 50s;
+    animation-duration: 50s;
+    -webkit-animation-iteration-count: inherit;
+    animation-iteration-count: inherit;
+  }
+
+.notification_xxl {
+    -webkit-animation-name: notification_start;
+    animation-name: notification_start;
+    -webkit-animation-duration: 100s;
+    animation-duration: 100s;
+    -webkit-animation-iteration-count: inherit;
+    animation-iteration-count: inherit;
+  }
+
+.notification_xxxl {
+    -webkit-animation-name: notification_start;
+    animation-name: notification_start;
+    -webkit-animation-duration: 180s;
+    animation-duration: 180s;
+    -webkit-animation-iteration-count: inherit;
+    animation-iteration-count: inherit;
+  }
+  
+  @-webkit-keyframes notification_start {   
+    0%  { bottom: -60rem;} 
+    10%  { bottom: 18rem;}   
+    80%  { bottom: 18rem;}  
+    100% { bottom: -60rem; }   
+   } 
+   @keyframes notification_start {   
+    0%  { bottom: -60rem;} 
+    10%  { bottom: 18rem;}   
+    80%  { bottom: 18rem;}  
+    100% { bottom: -60rem; }   
+   }
+  
+/* For Slide toggle*/
+.modern-checkbox label::before,
+.modern-checkbox label::after {
+    @apply absolute left-0 rounded-full border border-solid border-black cursor-pointer;
+    content: "";
+    transition: all 0.2s ease;
+}
+.modern-checkbox label::before {
+    @apply w-12 h-6 border border-solid border-gray-400 bg-gray-400;
+}
+.modern-checkbox label::after {
+    @apply w-6 h-6 bg-white border-0 top-0 left-0;
+}
+.modern-checkbox input:checked + label::after {
+    left: calc(111% - 20px);
+}
+.modern-checkbox input:checked + label::before {
+    @apply bg-blue-500 border-blue-500;
+}
+.modern-checkbox::after {
+    content: attr(data-label);
+    @apply pl-1 pt-1 flex;
+}
+/* For Tooltip*/
+.tooltip .tooltip-text {
+    visibility: hidden;
+    text-align: center;
+    padding: 2px 6px;
+    position: absolute;
+    z-index: 100;
+  }
+  .tooltip:hover .tooltip-text {
+    visibility: visible;
+  } 
+  .tooltip:focus-within {
+    /*For without border in span tooltip*/
+    outline: 0;
+  }
+  /* For animate msg confirmation */
+  .zum:active {
+    transform: translateY(4px);
+  }
+  /* For button input */
+  input[type="file"] {
+    display: none;
+}
+.custom-file-upload {
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+}
+.wrap-word {
+    white-space: -moz-pre-wrap !important;  /* Mozilla, since 1999 */
+    white-space: -webkit-pre-wrap;          /* Chrome & Safari */ 
+    white-space: -pre-wrap;                 /* Opera 4-6 */
+    white-space: -o-pre-wrap;               /* Opera 7 */
+    white-space: pre-wrap;                  /* CSS3 */
+    word-wrap: break-word;                  /* Internet Explorer 5.5+ */
+    word-break: break-all;
+    white-space: normal;
+}
+/* For scrollbar x hidden */
+.hidden-scrollbar-x {
+  overflow-x: hidden
+}
+/* For scrollbar y hidden */
+.hidden-scrollbar-y {
+  overflow-y: hidden
+}
+/*Triangulos para indicador de notas msg en edicion de oportunidad*/
+.triangulo-equilatero-bottom-left {
+  width: 0;
+  height: 0;
+  border-right: 5px solid transparent;
+  border-top: 5px solid transparent;
+  border-left: 5px solid rgba(219, 234, 254, var(--tw-bg-opacity));
+  border-bottom: 5px solid rgba(219, 234, 254, var(--tw-bg-opacity));
+}
+
+.triangulo-equilatero-bottom-rigth {
+  width: 0;
+  height: 0;
+  border-right: 5px solid rgba(219, 234, 254, var(--tw-bg-opacity));
+  border-top: 5px solid transparent;
+  border-left: 5px solid transparent;
+  border-bottom: 5px solid rgba(219, 234, 254, var(--tw-bg-opacity));
+}
+
+/*Border Shadow inpunt missing*/
+.border-missing {
+  box-shadow: 0 0 1px #F6473F, 0 0 5px #F6473F, 0 0 5px #F6473F;
+}
+
+/*Animation to blink, using before border shadow css*/
+.blink-animation {
+  animation: blink 1.5s infinite;
+}
+
+@keyframes blink {
+  to {
+    box-shadow: none;
+  }
+}
