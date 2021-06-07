@@ -19,6 +19,7 @@ defmodule GotenWeb.Router do
 
     get "/", HomeController, :index
     get "/home", HomeController, :index
+    get "/accounts", AccountController, :index
     get "/file", FileController, :index
     get "/get_file", FileController, :show
   end

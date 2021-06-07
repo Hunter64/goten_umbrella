@@ -109,7 +109,7 @@ defmodule GotenWeb.HeaderComponent do
         parent: 4,
         has_sub_menu: false,
         name_for_sub: "Cuentas",
-        link: "/",
+        link: "/accounts",
         icon: """
           <svg aria-hidden="true" focusable="false" data-prefix="fad" data-icon="mail-bulk" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" class="h-8 w-8 ml-2 mr-auto">
             <g class="fa-group">
