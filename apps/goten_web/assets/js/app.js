@@ -1,3 +1,16 @@
+let Hooks = {}
+
+Hooks.scroll_x = {
+    mounted() {        
+        var max = document.getElementById("scrolleable").offsetWidth
+        var left = max - screen.width;
+        setTimeout(() => {
+            window.scrollTo(left + 400, 0)
+        }, 100);
+    }
+};
+
+
 // We need to import the CSS so that webpack will load it.
 // The MiniCssExtractPlugin is used to separate it out into
 // its own CSS file.
